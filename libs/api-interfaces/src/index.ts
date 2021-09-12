@@ -1,1 +1,2 @@
-export * from './lib/api-interfaces.module';
+export * from './lib/item.model';
+export * from './lib/user.model';
