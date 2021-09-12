@@ -1,16 +1,19 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Item } from '@cs/api-interfaces';
+import { CS_ENVIRONMENT, CsEnvironment } from '@cs/environment';
 import { Observable } from 'rxjs';
 
-const BASE_URL = '';
-const MODEL = '';
+const MODEL = 'items';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ItemsService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    @Inject(CS_ENVIRONMENT) private config: CsEnvironment,
+    private http: HttpClient
+  ) {}
 
   all(): Observable<Item[]> {
     return this.http.get<Item[]>(this.getUrl());
@@ -33,7 +36,7 @@ export class ItemsService {
   }
 
   private getUrl(): string {
-    return `${BASE_URL}/${MODEL}`;
+    return `${this.config.baseUrl}/${MODEL}`;
   }
 
   private getUrlWithId(id: string | number): string {

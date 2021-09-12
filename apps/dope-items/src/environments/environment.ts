@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://auth-dope-items.herokuapp.com/',
+  baseUrl: 'https://auth-dope-items.herokuapp.com',
 };
 
 /*
