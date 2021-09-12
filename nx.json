@@ -27,12 +27,27 @@
     ]
   },
   "projects": {
+    "api-interfaces": {
+      "tags": []
+    },
+    "core-data": {
+      "tags": []
+    },
+    "core-state": {
+      "tags": []
+    },
     "dope-items": {
       "tags": []
     },
     "dope-items-e2e": {
       "tags": [],
       "implicitDependencies": ["dope-items"]
+    },
+    "material": {
+      "tags": []
+    },
+    "styles": {
+      "tags": []
     }
   }
 }

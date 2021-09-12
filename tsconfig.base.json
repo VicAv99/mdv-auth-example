@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@cs/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@cs/core-data": ["libs/core-data/src/index.ts"],
+      "@cs/core-state": ["libs/core-state/src/index.ts"],
+      "@cs/material": ["libs/material/src/index.ts"],
+      "@cs/styles": ["libs/styles/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
