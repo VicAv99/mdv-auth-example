@@ -96,7 +96,15 @@
               "apps/dope-items/src/favicon.ico",
               "apps/dope-items/src/assets"
             ],
-            "styles": ["apps/dope-items/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/dope-items/src/styles.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "libs/styles/src/lib"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

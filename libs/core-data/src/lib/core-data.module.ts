@@ -9,7 +9,7 @@ import { TokenInterceptor } from './auth/token.interceptor';
   imports: [CommonModule, HttpClientModule],
   providers: [
     AuthGuard,
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor },
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   ],
 })
 export class CoreDataModule {}

@@ -5,6 +5,7 @@ import { EnvironmentModule } from '@cs/environment';
 
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,6 +13,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     CoreDataModule,
     EnvironmentModule.withEnvironment(environment),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
