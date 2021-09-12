@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dope-items';
+  links = [{ path: '', icon: 'home', title: 'Home' }];
 }

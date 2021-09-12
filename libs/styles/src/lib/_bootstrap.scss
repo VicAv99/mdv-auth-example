@@ -26,7 +26,7 @@ $enable-gradients: false;
 $enable-transitions: false;
 
 // https://getbootstrap.com/docs/4.4/content/typography/#global-settings
-$font-family-base: $fdx-font;
+// $font-family-base: $fdx-font;
 
 @import '~bootstrap/scss/functions', '~bootstrap/scss/variables',
   '~bootstrap/scss/mixins', '~bootstrap/scss/utilities';

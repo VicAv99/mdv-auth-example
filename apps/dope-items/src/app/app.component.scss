@@ -1,0 +1,24 @@
+@import 'variables';
+
+mat-sidenav {
+  width: 200px;
+}
+
+mat-toolbar {
+  height: 55px;
+  z-index: 99;
+}
+
+.sidenav-container {
+  background: #F4F5FA;
+  flex: 1;
+  height: calc(100% - #{$toolbar-height});
+}
+
+.nav-link {
+  color: rgba(0, 0, 0, .54);
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
