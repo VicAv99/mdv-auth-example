@@ -19,6 +19,7 @@
       "@cs/core-data": ["libs/core-data/src/index.ts"],
       "@cs/core-state": ["libs/core-state/src/index.ts"],
       "@cs/environment": ["libs/environment/src/index.ts"],
+      "@cs/features/items": ["libs/features/items/src/index.ts"],
       "@cs/material": ["libs/material/src/index.ts"],
       "@cs/styles": ["libs/styles/src/index.ts"]
     }

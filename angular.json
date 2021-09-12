@@ -101,9 +101,7 @@
               "apps/dope-items/src/styles.scss"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "libs/styles/src/lib"
-              ]
+              "includePaths": ["libs/styles/src/lib"]
             },
             "scripts": []
           },
@@ -223,6 +221,31 @@
             "lintFilePatterns": [
               "libs/environment/src/**/*.ts",
               "libs/environment/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "features-items": {
+      "projectType": "library",
+      "root": "libs/features/items",
+      "sourceRoot": "libs/features/items/src",
+      "prefix": "cs",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/features/items"],
+          "options": {
+            "jestConfig": "libs/features/items/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/features/items/src/**/*.ts",
+              "libs/features/items/src/**/*.html"
             ]
           }
         }
