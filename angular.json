@@ -1,8 +1,145 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "dope-items": {
+      "projectType": "application",
+      "root": "apps/dope-items",
+      "sourceRoot": "apps/dope-items/src",
+      "prefix": "cs",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/dope-items",
+            "index": "apps/dope-items/src/index.html",
+            "main": "apps/dope-items/src/main.ts",
+            "polyfills": "apps/dope-items/src/polyfills.ts",
+            "tsConfig": "apps/dope-items/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/dope-items/src/favicon.ico",
+              "apps/dope-items/src/assets"
+            ],
+            "styles": ["apps/dope-items/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/dope-items/src/environments/environment.ts",
+                  "with": "apps/dope-items/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "dope-items:build:production"
+            },
+            "development": {
+              "browserTarget": "dope-items:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dope-items:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/dope-items/src/**/*.ts",
+              "apps/dope-items/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/dope-items"],
+          "options": {
+            "jestConfig": "apps/dope-items/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "dope-items-e2e": {
+      "root": "apps/dope-items-e2e",
+      "sourceRoot": "apps/dope-items-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/dope-items-e2e/cypress.json",
+            "devServerTarget": "dope-items:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dope-items:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/dope-items-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace",
+    "defaultCollection": "@nrwl/angular",
     "packageManager": "npm"
-  }
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "dope-items"
 }
