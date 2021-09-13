@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ItemsComponent } from '@cs/features/items';
+import { LoginComponent, NotFoundComponent } from '@cs/auth';
+import { ItemsComponent, ItemViewComponent } from '@cs/features/items';
 
 const routes: Routes = [
+  { path: 'login', component: LoginComponent },
   { path: '', component: ItemsComponent },
-  { path: '**', redirectTo: '/' },
+  { path: 'item/:id', component: ItemViewComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

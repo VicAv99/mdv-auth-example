@@ -30,6 +30,9 @@
     "api-interfaces": {
       "tags": []
     },
+    "auth": {
+      "tags": []
+    },
     "core-data": {
       "tags": []
     },

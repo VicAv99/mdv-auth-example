@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@cs/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@cs/auth": ["libs/auth/src/index.ts"],
       "@cs/core-data": ["libs/core-data/src/index.ts"],
       "@cs/core-state": ["libs/core-state/src/index.ts"],
       "@cs/environment": ["libs/environment/src/index.ts"],
