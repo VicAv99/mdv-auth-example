@@ -8,13 +8,13 @@
     </span>
   </span>
   <span class="spacer"></span>
-  <button mat-mini-fab routerLink="/login">
+  <button mat-mini-fab (click)="logoutAttempt()">
     <mat-icon>person</mat-icon>
   </button>
 </mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="side" opened class="app-sidenav">
+  <mat-sidenav #sidenav mode="side" [opened]="isAuthenticated$ | async" class="app-sidenav">
     <nav>
       <a mat-button class="nav-link" *ngFor="let link of links" [routerLink]="link.path" routerLinkActive="active">
         <mat-icon>{{link.icon}}</mat-icon>

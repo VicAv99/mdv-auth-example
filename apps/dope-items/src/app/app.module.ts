@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreStateModule } from '@cs/core-state';
@@ -15,6 +16,8 @@ import { RoutingModule } from './routing.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     CoreStateModule,
     EnvironmentModule.withEnvironment(environment),
     MaterialModule,

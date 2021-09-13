@@ -3,7 +3,7 @@ import { MatButtonModule } from '@angular/material/Button';
 import { MatButtonToggleModule } from '@angular/material/Button-Toggle';
 import { MatCardModule } from '@angular/material/Card';
 import { MatCheckboxModule } from '@angular/material/Checkbox';
-import { MatFormFieldModule } from '@angular/material/Form-Field';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/Form-Field';
 import { MatGridListModule } from '@angular/material/Grid-List';
 import { MatIconModule } from '@angular/material/Icon';
 import { MatInputModule } from '@angular/material/Input';
@@ -34,6 +34,12 @@ import { MatToolbarModule } from '@angular/material/Toolbar';
     MatTableModule,
     MatToolbarModule,
     MatButtonToggleModule,
+  ],
+  providers: [
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'outline' },
+    },
   ],
 })
 export class MaterialModule {}
