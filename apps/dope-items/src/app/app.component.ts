@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '@cs/core-data';
+import { AuthFacade } from '@cs/core-state';
 import { tap } from 'rxjs/operators';
 
 @Component({
@@ -8,13 +9,13 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  isAuthenticated$ = this.authService.isAuthenticated$.pipe(tap(console.log));
+  isAuthenticated$ = this.authFacade.isUserAuthenticated$;
   title = 'dope-items';
   links = [{ path: '', icon: 'home', title: 'Home' }];
 
-  constructor(private authService: AuthService) {}
+  constructor(private authFacade: AuthFacade) {}
 
   logoutAttempt() {
-    this.authService.logout();
+    this.authFacade.logout();
   }
 }

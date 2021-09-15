@@ -6,6 +6,7 @@ import { RootStoreConfig, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { reducers } from '.';
+import { AuthEffects } from './auth/auth.effects';
 import { ItemEffects } from './items/items.effects';
 
 const STORE_NAME = 'Patient Store';
@@ -21,7 +22,7 @@ const config: RootStoreConfig<any> = {
     CommonModule,
     CoreDataModule,
     StoreModule.forRoot(reducers, config),
-    EffectsModule.forRoot([ItemEffects]),
+    EffectsModule.forRoot([AuthEffects, ItemEffects]),
     StoreDevtoolsModule.instrument({ name: STORE_NAME }),
   ],
 })

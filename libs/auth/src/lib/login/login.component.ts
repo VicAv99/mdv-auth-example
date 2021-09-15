@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '@cs/core-data';
-import { tap } from 'rxjs/operators';
+import { AuthFacade } from '@cs/core-state';
 
 @Component({
   templateUrl: './login.component.html',
@@ -19,10 +18,7 @@ export class LoginComponent implements OnInit {
     return this.isPasswordField ? 'password' : 'text';
   }
 
-  constructor(
-    private formBuild: FormBuilder,
-    private authService: AuthService
-  ) {}
+  constructor(private formBuild: FormBuilder, private authFacade: AuthFacade) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -30,10 +26,7 @@ export class LoginComponent implements OnInit {
 
   loginAttempt() {
     if (!this.form.valid) return;
-    this.authService
-      .login(this.form.value)
-      .pipe(tap(({ access_token }) => this.authService.setToken(access_token)))
-      .subscribe();
+    this.authFacade.loginRequest(this.form.value);
   }
 
   private initForm() {
