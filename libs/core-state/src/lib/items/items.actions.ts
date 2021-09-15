@@ -5,7 +5,7 @@ import { createAction, props } from '@ngrx/store';
 
 export const selectItem = createAction(
   '[ITEM] Select Item',
-  props<{ itemId: string }>()
+  props<{ itemId: string | number }>()
 );
 
 // Load all Entities

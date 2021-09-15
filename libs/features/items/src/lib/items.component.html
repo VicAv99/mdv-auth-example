@@ -1,1 +1,18 @@
-<p>items works!</p>
+<div class="container">
+  <div class="col-50" layout="row" layout-align="center center">
+    <cs-items-list
+      [items]="allItems$ | async"
+      (selected)="selectItem($event)"
+      (deleted)="deleteItem($event)"
+    >
+    </cs-items-list>
+  </div>
+  <div class=" col-50" layout="row" layout-align="center center">
+    <cs-items-details
+      [group]="form"
+      [item]="selectedItem$ | async"
+      (saved)="saveItem($event)"
+      (cancelled)="resetItem()"
+    >
+    </cs-items-details>
+  </div>

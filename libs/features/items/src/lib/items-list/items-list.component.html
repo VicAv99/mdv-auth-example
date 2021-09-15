@@ -1,1 +1,19 @@
-<p>items-list works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Items Directory</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let item of items" data-test="item-list-item" (click)="selected.emit(item)">
+        <h3 matLine>{{item.name}}</h3>
+        <p matLine>Description: {{item.description}}</p>
+
+        <button mat-icon-button (click)="deleted.emit(item); $event.stopImmediatePropagation()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

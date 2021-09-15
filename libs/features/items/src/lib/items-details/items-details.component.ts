@@ -1,12 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormGroup, FormGroupDirective } from '@angular/forms';
+import { Item } from '@cs/api-interfaces';
 
 @Component({
   selector: 'cs-items-details',
   templateUrl: './items-details.component.html',
   styleUrls: ['./items-details.component.scss'],
 })
-export class ItemsDetailsComponent implements OnInit {
-  constructor() {}
+export class ItemsDetailsComponent {
+  currentItem?: Item;
+  originalTitle?: string;
 
-  ngOnInit(): void {}
+  @Output() saved = new EventEmitter();
+  @Output() cancelled = new EventEmitter();
+  @Input() group!: FormGroup;
+  @Input() set item(value: Item | null) {
+    if (!value) return;
+    if (value) this.originalTitle = value.name;
+    this.currentItem = { ...value };
+  }
+
+  save(formDirective: FormGroupDirective) {
+    this.saved.emit(formDirective.value);
+    formDirective.resetForm();
+  }
+
+  cancel() {
+    this.cancelled.emit();
+  }
 }

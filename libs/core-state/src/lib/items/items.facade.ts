@@ -23,7 +23,7 @@ export class ItemFacade {
     )
   );
 
-  selectItem(itemId: string) {
+  selectItem(itemId: string | number) {
     this.dispatch(ItemActions.selectItem({ itemId }));
   }
 
