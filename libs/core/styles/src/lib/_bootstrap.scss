@@ -1,0 +1,54 @@
+@import '~bootstrap/scss/functions', '~bootstrap/scss/variables',
+  '~bootstrap/scss/mixins', '~bootstrap/scss/utilities'; // TODO: revisit what utilities we truly need.
+
+/* https://getbootstrap.com/docs/4.5/layout/grid/#sass-mixins */
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+$grid-breakpoints: (
+  'xs': 0,
+  'sm': 600px,
+  'md': 960px,
+  'lg': 1280px,
+  'xl': 1920px,
+);
+
+$container-max-widths: (
+  'xs': 599.99px,
+  'sm': 959.99px,
+  'md': 1279.99px,
+  'lg': 1919.99px,
+  'xl': 2400px,
+);
+
+// https://getbootstrap.com/docs/4.4/getting-started/theming/#sass-options
+$enable-shadows: false;
+$enable-gradients: false;
+$enable-transitions: false;
+
+// https://getbootstrap.com/docs/4.4/content/typography/#global-settings
+// $font-family-base: $fdx-font;
+
+$sizes: (
+  '25': 25%,
+  '50': 50%,
+  '75': 75%,
+  '100': 100%,
+  '60px': 60px,
+  '80px': 80px,
+  '100px': 100px,
+);
+
+@import '~bootstrap/scss/bootstrap';
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $prop, $abbrev in (width: w, height: h) {
+      @each $size, $length in $sizes {
+        .#{$abbrev}-#{$infix}-#{$size} {
+          #{$prop}: $length !important;
+        }
+      }
+    }
+  }
+}

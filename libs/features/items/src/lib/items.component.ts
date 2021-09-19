@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { emptyItem, Item } from '@cs/api-interfaces';
-import { ItemFacade } from '@cs/core-state';
+import { emptyItem, Item } from '@cs/core/api-interfaces';
+import { ItemFacade } from '@cs/core/core-state';
 import { Observable } from 'rxjs';
 
 @Component({

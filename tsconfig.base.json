@@ -15,15 +15,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@cs/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@cs/auth": ["libs/auth/src/index.ts"],
-      "@cs/core-data": ["libs/core-data/src/index.ts"],
-      "@cs/core-state": ["libs/core-state/src/index.ts"],
-      "@cs/environment": ["libs/environment/src/index.ts"],
+      "@cs/core/api-interfaces": ["libs/core/api-interfaces/src/index.ts"],
+      "@cs/core/core-data": ["libs/core/core-data/src/index.ts"],
+      "@cs/core/core-state": ["libs/core/core-state/src/index.ts"],
+      "@cs/core/environment": ["libs/core/environment/src/index.ts"],
+      "@cs/core/styles": ["libs/core/styles/src/index.ts"],
+      "@cs/features/auth": ["libs/features/auth/src/index.ts"],
       "@cs/features/items": ["libs/features/items/src/index.ts"],
-      "@cs/material": ["libs/material/src/index.ts"],
-      "@cs/shared/pipes": ["libs/shared/pipes/src/index.ts"],
-      "@cs/styles": ["libs/styles/src/index.ts"]
+      "@cs/shared/material": ["libs/shared/material/src/index.ts"],
+      "@cs/shared/pipes": ["libs/shared/pipes/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

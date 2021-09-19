@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Item } from '@cs/api-interfaces';
+import { Item } from '@cs/core/api-interfaces';
 
 @Component({
   selector: 'cs-items-list',

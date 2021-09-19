@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.material-icons {
+  font-size: 24px;
+  font-family: 'Material Icons';
+  .mat-badge-content {
+    font-family: fedex-font;
+  }
+}
+
+// NOTE: Use these font helpers as last option. Please prefer SharedMaterial Typography classes first.
+
+$spacer: 1rem;
+$font-sizes: 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2;
+
+@each $font-size in $font-sizes {
+  $i: index(
+    $list: $font-sizes,
+    $value: $font-size,
+  );
+  .fs-#{$i} {
+    font-size: $spacer * $font-size;
+  }
+}

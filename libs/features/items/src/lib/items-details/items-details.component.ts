@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
-import { Item } from '@cs/api-interfaces';
+import { Item } from '@cs/core/api-interfaces';
 import { validationMessages } from '@cs/shared/pipes';
 
 @Component({

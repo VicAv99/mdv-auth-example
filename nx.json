@@ -27,16 +27,19 @@
     ]
   },
   "projects": {
-    "api-interfaces": {
+    "core-api-interfaces": {
       "tags": []
     },
-    "auth": {
+    "core-core-data": {
       "tags": []
     },
-    "core-data": {
+    "core-core-state": {
       "tags": []
     },
-    "core-state": {
+    "core-environment": {
+      "tags": []
+    },
+    "core-styles": {
       "tags": []
     },
     "dope-items": {
@@ -46,19 +49,16 @@
       "tags": [],
       "implicitDependencies": ["dope-items"]
     },
-    "environment": {
+    "features-auth": {
       "tags": []
     },
     "features-items": {
       "tags": []
     },
-    "material": {
+    "shared-material": {
       "tags": []
     },
     "shared-pipes": {
-      "tags": []
-    },
-    "styles": {
       "tags": []
     }
   }

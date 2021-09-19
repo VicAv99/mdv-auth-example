@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '@cs/core-data';
-import { AuthFacade } from '@cs/core-state';
-import { tap } from 'rxjs/operators';
+import { FeaturesAuthFacade } from '@cs/core/core-state';
 
 @Component({
   selector: 'cs-root',
@@ -13,7 +11,7 @@ export class AppComponent {
   title = 'dope-items';
   links = [{ path: '', icon: 'home', title: 'Items' }];
 
-  constructor(private authFacade: AuthFacade) {}
+  constructor(private authFacade: FeaturesAuthFacade) {}
 
   logoutAttempt() {
     this.authFacade.logout();
