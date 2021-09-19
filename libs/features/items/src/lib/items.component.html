@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="col-50" layout="row" layout-align="center center">
+<div class="d-flex flex-column flex-md-row">
+  <div class="w-100 w-md-50 mr-md-2 mx-0 my-2 order-1 order-md-0">
     <cs-items-list
       [items]="allItems$ | async"
       (selected)="selectItem($event)"
@@ -7,7 +7,7 @@
     >
     </cs-items-list>
   </div>
-  <div class=" col-50" layout="row" layout-align="center center">
+  <div class="w-100 w-md-50 ml-md-2 mx-0 my-2 order-0 order-md-1">
     <cs-items-details
       [group]="form"
       [item]="selectedItem$ | async"
@@ -16,3 +16,4 @@
     >
     </cs-items-details>
   </div>
+</div>

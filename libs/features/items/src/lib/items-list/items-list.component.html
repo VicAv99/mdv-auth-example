@@ -6,7 +6,7 @@
   </mat-card-header>
   <mat-card-content>
     <mat-list>
-      <mat-list-item *ngFor="let item of items" data-test="item-list-item" (click)="selected.emit(item)">
+      <mat-list-item *ngFor="let item of items" class="mat-list-option" (click)="selected.emit(item)">
         <h3 matLine>{{item.name}}</h3>
         <p matLine>Description: {{item.description}}</p>
 

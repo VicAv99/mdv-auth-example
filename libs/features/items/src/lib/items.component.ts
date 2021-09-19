@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { emptyItem, Item } from '@cs/api-interfaces';
 import { ItemFacade } from '@cs/core-state';
 import { Observable } from 'rxjs';
@@ -48,8 +48,18 @@ export class ItemsComponent implements OnInit {
   private initForm() {
     this.form = this.formBuilder.group({
       id: [null],
-      name: [''],
+      name: [
+        '',
+        [Validators.required, forbiddenItemsValidator(/table|Table|TABLE/i)],
+      ],
       description: [''],
     });
   }
+}
+
+export function forbiddenItemsValidator(nameRe: RegExp): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const forbidden = nameRe.test(control.value);
+    return forbidden ? { forbiddenItem: { value: control.value } } : null;
+  };
 }

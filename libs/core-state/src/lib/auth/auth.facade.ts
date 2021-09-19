@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Action, ActionsSubject, Store } from '@ngrx/store';
+import { Action, Store } from '@ngrx/store';
 
 import * as AuthActions from './auth.actions';
 import * as fromAuth from './auth.reducer';
@@ -14,10 +14,7 @@ export class AuthFacade {
     AuthSelectors.selectUserAuthenticated
   );
 
-  constructor(
-    private store: Store<fromAuth.AuthState>,
-    private actions$: ActionsSubject
-  ) {}
+  constructor(private store: Store<fromAuth.AuthState>) {}
 
   loginRequest(loginPayload: { username: string; password: string }) {
     this.dispatch(AuthActions.loginRequested(loginPayload));

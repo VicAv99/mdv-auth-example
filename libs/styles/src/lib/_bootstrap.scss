@@ -28,5 +28,25 @@ $enable-transitions: false;
 // https://getbootstrap.com/docs/4.4/content/typography/#global-settings
 // $font-family-base: $fdx-font;
 
-@import '~bootstrap/scss/functions', '~bootstrap/scss/variables',
-  '~bootstrap/scss/mixins', '~bootstrap/scss/utilities';
+$sizes: (
+  '25': 25%,
+  '50': 50%,
+  '75': 75%,
+  '100': 100%,
+  '60px': 60px,
+  '80px': 80px,
+  '100px': 100px
+);
+
+@import '~bootstrap/scss/bootstrap';
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $prop, $abbrev in (width: w, height: h) {
+      @each $size, $length in $sizes {
+        .#{$abbrev}-#{$infix}-#{$size} { #{$prop}: $length !important; }
+      }
+    }
+  }
+}

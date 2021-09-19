@@ -36,7 +36,7 @@ export class ItemsService {
   }
 
   private getUrl(): string {
-    return `${this.config.baseUrl}/${MODEL}`;
+    return `${this.config.baseUrl}${MODEL}`;
   }
 
   private getUrlWithId(id: string | number): string {

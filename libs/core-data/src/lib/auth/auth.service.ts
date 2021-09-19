@@ -27,7 +27,7 @@ export class AuthService {
 
   login(loginData: any): Observable<{ access_token: string }> {
     return this.http.post<{ access_token: string }>(
-      `${this.config.baseUrl}/${MODEL}/login`,
+      `${this.config.baseUrl}${MODEL}/login`,
       loginData
     );
   }

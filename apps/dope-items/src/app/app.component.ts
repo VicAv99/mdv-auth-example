@@ -11,7 +11,7 @@ import { tap } from 'rxjs/operators';
 export class AppComponent {
   isAuthenticated$ = this.authFacade.isUserAuthenticated$;
   title = 'dope-items';
-  links = [{ path: '', icon: 'home', title: 'Home' }];
+  links = [{ path: '', icon: 'home', title: 'Items' }];
 
   constructor(private authFacade: AuthFacade) {}
 

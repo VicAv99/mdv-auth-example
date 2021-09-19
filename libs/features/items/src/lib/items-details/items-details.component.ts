@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, FormGroupDirective } from '@angular/forms';
 import { Item } from '@cs/api-interfaces';
+import { validationMessages } from '@cs/shared/pipes';
 
 @Component({
   selector: 'cs-items-details',
@@ -10,6 +11,7 @@ import { Item } from '@cs/api-interfaces';
 export class ItemsDetailsComponent {
   currentItem?: Item;
   originalTitle?: string;
+  messages = validationMessages;
 
   @Output() saved = new EventEmitter();
   @Output() cancelled = new EventEmitter();
